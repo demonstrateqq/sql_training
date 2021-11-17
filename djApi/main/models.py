@@ -3,7 +3,7 @@ from django.db import models
 
 class Auto(models.Model):
     name = models.CharField(max_length=55, verbose_name='Марка авто')
-    price = models.DecimalField(max_digits=8, decimal_places=2, verbose_name='Цена авто')
+    price = models.DecimalField(max_digits=8, decimal_places=2, verbose_name='Цена авто', null=True)
     brand = models.ForeignKey('Brand', on_delete=models.CASCADE, verbose_name='Модель авто')
     details = models.ManyToManyField('Detail', verbose_name='Запчасти авто')
     objects = 'hello'
